@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اكتشفي الرغبات والمشاعر</title>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #ffcccc, #ff6699);
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            direction: rtl;
+            text-align: right;
+        }
+
+        h1, h2 {
+            color: #ff3366;
+            text-align: center;
+            font-size: 32px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ff99aa;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        select, textarea, input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ff3366;
+            font-size: 16px;
+            background-color: #ffe6e6;
+            color: #333;
+        }
+
+        button {
+            background-color: #ff3366;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #cc0052;
+        }
+
+        .analysis {
+            background-color: #ff6699;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 16px;
+            line-height: 1.6;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+           }
+
+        #copy-button:hover {
+            background-color: #cc0052;
+        }
+
+
+        #final-analysis {
+            background-color: #ff6699;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 16px;
+            line-height: 1.6;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        button, select, textarea {
+            transition: all 0.3s ease;
+        }
+
+        select:focus, textarea:focus {
+            outline: none;
+            border-color: #ff3366;
+            box-shadow: 0 0 5px #ff6699;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container fade-in">
+    <h1>اكتشفي مشاعرك والرغبة الجنسية</h1>
+    <p>يرجى الإجابة عن الأسئلة التالية بصدق لتحليل مشاعرك وتجربتك بشكل أعمق :</p>
+
+    <form id="sexual-form">
+        <label for="desire-level">ما هو مستوى رغبتك الجنسية الان؟</label>
+        <select id="desire-level">
+            <option>مرتفع جداً</option>
+            <option>مرتفع</option>
+            <option>متوسط</option>
+            <option>منخفض</option>
+            <option>منخفض جداً</option>
+        </select>
+
+        <label for="arousal-frequency">كم مرة تشعرين بالهيجان الجنسي في الأسبوع؟</label>
+        <select id="arousal-frequency">
+            <option>يومياً</option>
+            <option>عدة مرات في الأسبوع</option>
+            <option>مرة في الأسبوع</option>
+            <option>أقل من مرة في الأسبوع</option>
+        </select>
+
+        <label for="handle-desire">كيف تتعاملين مع رغباتك الجنسية؟</label>
+        <select id="handle-desire">
+            <option>بالاتصال الجسدي مع شريكي</option>
+            <option>أتعامل معها بنفسي</option>
+            <option>أتركها حتى تهدأ</option>
+            <option>باستخدام الهاتف</option>
+        </select>
+
+        <label for="satisfaction">ما مدى رضاك عن حياتك الجنسية حالياً؟</label>
+        <select id="satisfaction">
+            <option>راضٍ جداً</option>
+            <option>راضٍ إلى حد ما</option>
+            <option>غير راضٍ</option>
+            <option>غير راضٍ على الإطلاق</option>
+        </select>
+
+        <label for="psych-state">كيف تصفين رغبتك الجنسية بشكل عام؟</label>
+        <select id="psych-state">
+            <option>مرتفعة جدًا وأرغب دائمًا في المزيد</option>
+            <option>أشعر بالرغبة في أوقات معينة</option>
+            <option>منخفضة قليلاً، أشعر أحياناً بعدم الرغبة</option>
+            <option>نادرًا ما أشعر بالرغبة الجنسية</option>
+        </select>
+
+        <label for="desire-boost">هل تشعرين أن هناك حاجة لزيادة رغبتك الجنسية؟</label>
+        <select id="desire-boost">
+            <option>نعم، أشعر أني باردة</option>
+            <option>لا، هي مشتعلة الآن</option>
+            <option>لا أعلم، كيف أكتشف ذلك</option>
+        </select>
+
+        <label for="intimacy-desire">ما هي العوامل التي تؤثر بشكل أكبر على رغبتك الجنسية؟</label>
+        <select id="intimacy-desire">
+            <option>الأحضان العاطفية الشديدة</option>
+            <option>القبلات واللمسات الدافئة</option>
+            <option>عند لمس بعض المناطق في جسدي</option>
+            <option>الحديث الطويل حول الجنس</option>
+            <option>الأفلام الرومنسية والمقاطع القصيرة</option>
+        </select>
+
+        <label for="partner-communication">هل تريدين المساعدة في إزاحة هذا الضغط؟</label>
+        <select id="partner-communication">
+            <option>نعم</option>
+            <option>ربما</option>
+            <option>لا</option>
+            <option>أخجل الطلب</option>
+        </select>
+
+        <label for="note">هل هناك ملاحظة أو طلب ترغبين في إضافته؟</label>
+        <textarea id="note" placeholder="اكتبي هنا..."></textarea>
+
+        <button type="button" onclick="analyzeSexualMood()">تحليل مشاعري</button>
+              <button type="button" id="final-analysis-button" onclick="showFinalAnalysis()">تحليل نهائي</button>
+        <button type="button" id="copy-button" onclick="copyAnalysis()">نسخ التحليل</button>
+</form>
+</div>
+
+    <div class="analysis" id="analysis-output"></div>
+    <div class="analysis" id="final-analysis"></div>
+</div>
+
+<script>
+    function analyzeSexualMood() {
+        const desireLevel = document.getElementById('desire-level').value;
+        const arousalFrequency = document.getElementById('arousal-frequency').value;
+        const psychState = document.getElementById('psych-state').value;
+        const satisfaction = document.getElementById('satisfaction').value;
+        const desireBoost = document.getElementById('desire-boost').value;
+        const intimacyDesire = document.getElementById('intimacy-desire').value;
+        const partnerCommunication = document.getElementById('partner-communication').value;
+        const handleDesire = document.getElementById('handle-desire').value;
+        const note = document.getElementById('note').value;
+
+        let analysis = "<strong>تحليل مشاعرك الجنسية:</strong><br><br>";
+
+        // تحليل مستوى الرغبة الجنسية
+        if (desireLevel === "مرتفع جداً") {
+            analysis += "رغبتك الجنسية مرتفعة جدًا في الوقت الحالي، مما يعكس تفاعلاً قويًا مع مشاعرك الحميمية و المنطقة التي بين فخذيك لذلك لا تتركيها تهدأ أبدا أنت مشتعلة بشكل رائع جدا لا تحاولي السيطرة عليها أو كبحها وتعاملي معها بحذر<br>";
+        } else if (desireLevel === "مرتفع") {
+            analysis += "تشعرين بأن رغبتك الجنسية مرتفعة قليلا ذلك جيد بالنسبة لك وهذا مستوى طبيعي للمرأة البالغة، ولا أنصح أن ينتهي يومك قبل إشباعها عليك إيجاد الطريقة المناسبة فقط وإكتشفي ذلك من خلال تحليل هذا الاستبيان.<br>";
+        } else if (desireLevel === "متوسط") {
+            analysis += "رغبتك الجنسية في مستوى معتدل وتشعرين بالتحكم فيها بشكل جيد، لا بأس وذلك ليس سيء، ربما إنشغالك عنها هو السبب أو انك لا تلقي لها أي إهتمام.. أنصح بتحفيزها قليلا.<br>";
+        } else {
+            analysis += "تشعرين بانخفاض في رغبتك الجنسية وقد تحتاجين إلى البحث عن محفزات ترفعها، أنتبهي أن لا تتجه بك هذه المرحلة الى البرود الجنسي أو الجفاف.. سوف يؤثر ذلك عليك سلباً.<br>";
+        }
+
+        // تحليل تكرار الهيجان
+        if (arousalFrequency === "يومياً") {
+            analysis += "تشعرين بالهيجان الجنسي يوميًا، مما يعني أن لديك رغبة عالية مستمرة في الحميمية والممارسة وذلك يدل على أنك إمرأة في أعلى قمة لها من الإثارة والهيجان وأنك سريعة التحفيز لا تجعلي هذا الجانب يهدأ أنت رائعة وقلة من يشبهك.<br>";
+        } else if (arousalFrequency === "عدة مرات في الأسبوع") {
+            analysis += "تشعرين بالهيجان الجنسي عدة مرات في الأسبوع، وهو معدل طبيعي وصحي و ربما الانشغال عنها هو السبب في ذلك وغالبا الأمر ليس سيئ ولا يستدعي القلق.<br>";
+        } else if (arousalFrequency === "مرة في الأسبوع") {
+            analysis += "تشعرين بالهيجان الجنسي مرة واحدة في الأسبوع، مما يشير إلى رغبة معتدلة ولا بأس بها ولكن يجب الانتباه عليها لانها منخفضة ويجب عليك البحث حول اسباب ذلك واكتشاف المحفزات والمثيرات التي تساعد على تعددها في الاسبوع الواحد.<br>";
+        } else {
+            analysis += "تشعرين بالهيجان الجنسي أقل من مرة في الأسبوع، مما قد يشير إلى إنخفاض عالي جدا في الرغبة ويجب معالجة ذلك بأي طرق ممكنة ولا تخلجي من السؤال حول الكيفية، كما يعتبر هذا أدنى مستوى للمرأة البالغة.<br>";
+        }
+
+        // تحليل كيفية التعامل مع الرغبة
+        if (handleDesire === "بالاتصال الجسدي مع شريكي") {
+            analysis += "تتعاملين مع رغباتك الجنسية من خلال الاتصال الجسدي المباشر مع شريكك عبر ممارسة الجنس، مما يعزز الحميمية والعلاقة العاطفية لديك وذلك جيد، كما يجب عليك الحفاظ على المتعة بينكم في أعلى مستوى لها والتنويع في التجارب والممارسات حتى لا تسوء تكرار العلاقات المتشابهة بينكم.<br>";
+        } else if (handleDesire === "أتعامل معها بنفسي") {
+            analysis += "أنت قادرة على التعامل مع رغباتك بشكل مستقل ولديك عدة حلول لها كالعادة السرية وغيرها، مما يعكس ذلك قوة التواصل مع جسدك وليس لديك الشريك المناسب لمساعدتك عليها، و يشير ذلك أيضا الى استقلاليتك والاكتفاء الذاتي في الوقت الحالي<br>";
+        } else if (handleDesire === "أتركها حتى تهدأ") {
+            analysis += "تميلين إلى ترك الرغبات تهدأ من تلقاء نفسها، وهو أسلوب هادئ في التعامل مع الرغبة ولديك قوة تحكم عالية ولكن ليس دائما.<br>";
+        } else {
+            analysis += "تستخدمين الهاتف للتعامل مع رغباتك الجنسية وإشباعها، قد يدل هذا على الحاجة الدائمة للتواصل والتفريغ عبر هذه الوسيلة ويتضح أن لديك مخيلة واسعة ومرنة تستطيع رسم الاحداث والوضعيات من خلال المحادثات أو القصص أو المقاطع.<br>";
+        }
+
+        // تحليل مستوى الرضا
+        if (satisfaction === "راضٍ جداً") {
+            analysis += "أنت راضية تمامًا عن حياتك الجنسية، مما يعكس توازنًا ورضا في علاقتك الحميمية ولديك كافة وسائل الاشباع هذه نقطة رائعة من صالحك ولا تحتاج إلى تحسين حافظي على هذا المستوى دائما.<br>";
+        } else if (satisfaction === "راضٍ إلى حد ما") {
+            analysis += "أنت راضية إلى حد ما، لكن قد يكون هناك جوانب يمكن تحسينها ويجب عليك البحث فيها إذا كان لديك الشريك المناسب إفتحي الحوار معه وتوصلوا الى الرضا التام أو اكتشفي الحلول التي ترفع هذا المستوى وحسني هذا الجانب أن لم يكن متاح.<br>";
+        } else if (satisfaction === "غير راضٍ") {
+            analysis += "تشعرين بعدم الرضا عن حياتك الجنسية، مما يدل على النقص الحاد لديك في الاشباع ، ذلك يستدعي مزيدًا من التواصل مع شريكك لتحسين الأمور أو إيجاد الحلول التي تشبعك إن لم يكن هناك شريك أو فهم حول كيفية الوصول الى خاتمة الرغبة بالشكل الصحيح وهناك عدة وسائل يمكن الاستشارة حولها.<br>";
+        } else {
+            analysis += "تشعرين بعدم الرضا على الاطلاق مما يعني أنك كارهة لهاذا الجانب أو أنك لم تجربي إشباعها بالطرق الممكنة أو أنك تنتظري الرجل المناسب، وفي حال قد جربتي الجنس مسبقاً ولازلت كارهة للحياة الجنسية فأنصح بأخذ استشارة عاجلة والبحث حول إيجاد مخرج من هذه المشكلة.<br>";
+        }
+
+        // تحليل الحالة النفسية
+        if (psychState === "مرتفعة جدًا وأرغب دائمًا في المزيد") {
+            analysis += "رغبتك الجنسية مرتفعة جدًا وتشعرين بالحاجة الدائمة لإشباعها، أنتي ممتلئة بشكل جيد ولديك طاقة عالية في هذا الجانب.. هذا يدل على أنك مشتعلة دائما وصعب إشباع رغباتك بسهولة، استخدمي كل الطرق الممكنة لإطفائها،وعليك أختيار الرجل المناسب لهذه المهمة أو إيصال الفكرة إليه أن كان متاح.<br>";
+        } else if (psychState === "أشعر بالرغبة في أوقات معينة") {
+            analysis += "تشعرين بالرغبة في أوقات معينة، مما يعني أن الرغبة لديك تتحفز في ظروف أو طقوس معينة ومع ذلك يجب عليك إكتشاف المحفزات لديك لتتمكني من إستخدامها في حال الحاجة الماسة لها وهناك عدة طرق يمكن أن تثيرك أسئلي عنها.<br>";
+        } else if (psychState === "منخفضة قليلاً، أشعر أحياناً بعدم الرغبة") {
+            analysis += "تشعرين بانخفاض طفيف في الرغبة، وقد تشعرين بعدم الرغبة في بعض الأوقات، وذلك يبدوا انه برود جنسي أو أنك مهملة لهذا الجانب، واعتقد أنك بحاجة الى تغيير هذا المستوى واكتشاف الخلل الذي ساهم في تذبذب الرغبة لديك.<br>";
+        } else {
+            analysis += "نادراً ما تشعرين بالرغبة الجنسية، وقد تحتاجين إلى استكشاف الأسباب وهذا ليس جيد بالنسبة للمرأة البالغة وهو ما يدل على أن الخلل في الجانب الجنسي لديك هائل ويجب عليك تحفيز الرغبات لديك وتجربة كافة المثيرات والحلول التي تساهم في إنتشالك من هذا المستوى.<br>";
+        }
+
+        // تحليل تعزيز الرغبة
+        if (desireBoost === "نعم، أشعر أني باردة") {
+            analysis += "تشعرين بأن رغبتك منخفضة وتحتاجين إلى وسائل لزيادة الرغبة الجنسية،سيساعدك معرفة ما هي المثيرات لهذه الحالة، البرود الجنسي مشكلة للمرأة البالغة وتأثيرها السلبي سيء ويمكن أن يؤثر على علاقة الشخص الجنسية ومزاجه.<br>";
+        } else if (desireBoost === "لا، هي مشتعلة الآن") {
+            analysis += "رغبتك الجنسية مشتعلة الآن، وتشعرين بالحماس تجاه العلاقة الحميمية.. ذلك أفضل مستوى للمرأة ومتعب قليلا مما يجعل المنطقة رطبة دائما والافكار المثيرة مترددة في مخيلتك كثيراً، حافظي عليها هكذا ولكن أكتشفي ما يمكن أن يشبعك دائما ولا يقلل من هذه الرغبة العالية.<br>";
+        } else {
+            analysis += "تشعرين بالحيرة حول مستوى رغبتك الجنسية أو أنك لم تستطيعي أكتشاف المحفزات بعد، وقد تحتاجين إلى استكشاف مشاعرك ورغباتك الجنسية أولا بشكل أعمق وإيجاد الحلول التي تساعد على فهمك لهذا الجانب وأنصح بالاستشارة فيها<br>";
+        }
+
+        // تحليل العوامل المؤثرة
+        if (intimacyDesire === "الأحضان العاطفية الشديدة") {
+            analysis += "تشعرين بأن الأحضان العاطفية الشديدة هي العامل الرئيسي الذي يزيد من رغبتك، الاحضان هي بداية كل شي ومحفز جنسي رائع يجعل الاجساد ساخنة.. أنتي عاطفية ورومنسية أيضا وتفضلي الممارسة اللطيفة كبداية وتتجنبي العنف قدر إستطاعتك.<br>";
+        } else if (intimacyDesire === "القبلات واللمسات الدافئة") {
+            analysis += "القبلات واللمسات الدافئة هي ما يزيد من رغبتك الجنسية، لذلك يجب أن تكون هي بداية علاقتك الجنسية دائما، أنت عميقة وسريعة الذوبان ولديك خبرة في هذا الجانب ومعرفة واسعة بالنقاط المثيرة في جسدك.<br>";
+        } else if (intimacyDesire === "عند لمس بعض المناطق في جسدي") {
+            analysis += "تشعرين بزيادة الرغبة الجنسية عند لمس بعض المناطق الحساسة في جسدك كمنطقة الصدر وما بين الفخذين وهذه المناطق المثيرة جدا للمرأة والمحفزة لأي ممارسة ويمكن أن يستخدمها الرجل كسلاح ضدك كما أنها تعتبر بداية سريعة للمارسة وبذلك أنتي تخطيتي العديد من المقبلات التي تساعد في إهاجتك جنسياً، ومن الجيد أنك إكتشفتي ذلك مسبقا.<br>";
+        } else {
+            analysis += "تشعرين بأن الأفلام الرومانسية والمقاطع تثير مشاعرك الجنسية، ذلك يدل على أنه ليس لديك الرجل الذي يملئ الجانب الجنسي معك..وايضا رغباتك تعتمد على مخيلتك الواسعة وشغف الاكتشاف، كما تدل أيضا على ارتفاع في تصنيف رغباتك وكذلك لديك مرونة وسرعة في الوصول الى الرغبة وتمتلكي مفضلة خاصة تثيرك كالوضعيات والممارسات وتفضلي تخيلها عليك من خلال الافلام و تجربتها مسبقاً.<br>";
+        }
+
+        // تحليل الاتصال بالشريك
+        if (partnerCommunication === "نعم") {
+            analysis += "تشعرين بالحاجة إلى المساعدة في إزاحة الانفعال الجنسي، وهو أمر صحي للتواصل ودائما أطلبي ذلك فور حاجتك دون خجل فربما ذلك سيساعدك في إكتشاف الكثير حول الجانب الجنسي لديك واكتساب المعرفة.<br>";
+        } else if (partnerCommunication === "ربما") {
+            analysis += "تشعرين بأنك قد تحتاجين إلى المساعدة في إشباع رغباتك أو إثارتك أو أنك لا تملكي الرجل المناسب، و غير متأكدة تمامًا بكيفية فعل ذلك, لا تقلقي سوف تحصلي عليها وهناك وسائل كثيرة لذلك.<br>";
+        } else {
+            analysis += "تشعرين بالقدرة على التعامل مع رغباتك الجنسية بنفسك دون الحاجة للمساعدة وربما تشعرين بالخجل من طلب المساعدة في إزاحة الضغط الجنسي، هذا ليس جيد ويجب معالجته لأنها من الاولويات في حياتك وقد تحتاجين إلى دعم عاطفي أكبر ويجب أن يجمتع على إنجازها إثنين.<br>";
+        }
+
+        // عرض الملاحظة
+        if (note) {
+            analysis += "ملاحظة: " + note + "<br>";
+        }
+
+        document.getElementById('analysis-output').innerHTML = analysis;
+        document.getElementById('analysis-output').style.display = 'block';
+        document.getElementById('final-analysis').style.display = 'none';
+    }
+
+    function copyAnalysis() {
+        const analysisText = document.getElementById('analysis-output').innerText;
+        navigator.clipboard.writeText(analysisText).then(() => {
+            alert('تم نسخ التحليل!');
+        });
+    }
+
+    function showFinalAnalysis() {
+        // تحليل نهائي يمكن تعديله بناءً على المتطلبات
+        const finalAnalysis = "<strong>تحليل نهائي:</strong><br><br>" +
+            "بناءً على إجاباتك، يبدو أن هناك تبايناً بين رغبتك الجنسية والتعامل معها. قد يكون من المفيد استشارة متخصص لتقديم نصائح مخصصة وتحسين تجربتك الجنسية وإكتشاف رغباتك.<br>" +
+            "تحليل أعمق يمكن أن يكشف عن جوانب إضافية مثل أسباب الانخفاض أو زيادة الرغبة.<br>" +
+            "لا تترددي في البحث عن الدعم المناسب لتحسين حياتك الجنسية والشخصية أن إمتلئ هذا الجانب في حياتك سوف تمتلئ باقي جوانب حياتك السعيدة.<br>";
+        
+        document.getElementById('final-analysis').innerHTML = finalAnalysis;
+        document.getElementById('final-analysis').style.display = 'block';
+    }
+
+    function copyFinalAnalysis() {
+        const finalAnalysisText = document.getElementById('final-analysis').innerText;
+
+        // زر نسخ التحليل
+        if (!document.getElementById('copy-button')) {
+            const copyButton = document.createElement('button');
+            copyButton.id = 'copy-button';
+            copyButton.innerText = 'نسخ التحليل';
+            copyButton.onclick = copyAnalysis;
+            analysisOutput.appendChild(copyButton);
+        }
+    }
+
+    function copyAnalysis() {
+        const analysisText = document.getElementById('analysis-output').innerText;
+        const tempTextArea = document.createElement('textarea');
+        tempTextArea.value = analysisText;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempTextArea);
+        alert('تم نسخ التحليل إلى الحافظة!');
+    }
+</script>
+
+</body>
+</html>
